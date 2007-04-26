@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<test-batch>
+    <module>
+        <title>Form Examples</title>
+        <server protocol="http" domain="hygia" port="80" />
+        <tests>
+
+            <!-- Testing a basic form use case with method POST -->
+			<test>
+                <title>Login form, using POST method</title>
+                <path>/examples/form_login.php</path>
+                <input>
+					<request>
+	                    <vars>
+	                        <var type="post">name=username1</var>
+	                        <var type="post">pass=password1</var>
+	                    </vars>
+					</request>
+                </input>
+                <output>
+					<validators>
+                		<validator type="re">/Welcome username1\. Your password is password1/i</validator>
+					</validators>
+                </output>
+            </test>
+
+            <!-- Testing a basic form use case with method GET -->
+			<test>
+                <title>Login form, using GET method</title>
+                <path>/examples/form_login.php</path>
+                <input>
+					<request>
+	                    <vars>
+	                        <var type="get">name=username2</var>
+	                        <var type="get">pass=password2</var>
+	                    </vars>
+					</request>
+                </input>
+                <output>
+					<validators>
+	                    <validator type="re">/Welcome username2\. Your password is password2/i</validator>
+					</validators>
+                </output>
+            </test>
+
+			<!-- Testing a file upload, combined with other post vars -->
+            <test>
+                <title>File Upload form</title>
+                <path>/examples/form_upload.php</path>
+                <input>
+					<request>
+	                    <vars>
+	                        <var type="post">myvar1=value1</var>
+	                        <var type="post">myvar2=value2</var>
+	                    </vars>
+	                    <body type="application/zip" name="userfile">files/example.zip</body>
+					</request>
+                </input>
+				<output>
+					<validators>
+						<validator type="re">/file is valid, and was successfully uploaded/i</validator>
+					</validators>
+				</output>
+            </test>
+
+			<!-- Testing a CRAM login, demonstrating flows in a two-step process (step 1/2) -->
+            <test>
+                <title>CRAM login, step 1/2, goto login and get the challenge</title>
+                <path>/examples/form_cram.php</path>
+				<output>
+					<validators>
+						<validator type="re">/name:/i</validator>
+						<validator type="re">/pass:/i</validator>
+					</validators>
+					<plugins>
+                        <plugin>response/GetChallenge</plugin>
+					</plugins>
+				</output>
+            </test>
+
+			<!-- Testing a CRAM login, demonstrating flows in a two-step process (step 2/2) -->
+            <test>
+                <title>CRAM login, step 2/2, submit login credentials</title>
+                <path>/examples/form_cram.php</path>
+				<input>
+					<request>
+	                    <vars>
+	                        <var type="post">name=demo</var>
+	                        <var type="post">pass=demo</var>
+	                    </vars>
+					</request>
+					<plugins>
+                        <plugin>request/SetResponse</plugin>
+					</plugins>
+				</input>
+				<output>
+					<validators>
+						<validator type="re">/welcome demo, you have been logged in/i</validator>
+					</validators>
+				</output>
+            </test>
+
+        </tests>
+    </module>
+</test-batch>

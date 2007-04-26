@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<test-batch>
+     <module>
+        <title>HTTP Auth Examples</title>
+        <server protocol="http" domain="hygia" port="80" />
+        <tests>
+
+            <!-- Testing .htaccess protected directory, for the test to be valid, do this: -->
+            <!-- * edit .htaccess and set path to .htpasswd correctly. -->
+            <!-- * set "AllowOverride All" in the directory directive of the virtual
+                   host configuration of Apache, or similar web server directives. -->
+            <test>
+                <title>.htaccess / .htpasswd protected directory</title>
+                <path user="bas" pass="bas">/examples/access/</path>
+				<output>
+					<validators>
+						<validator type="re">/this is my protected index file/i</validator>
+					</validators>
+				</output>
+            </test>
+
+		</tests>		
+	</module>
+</test-batch>
