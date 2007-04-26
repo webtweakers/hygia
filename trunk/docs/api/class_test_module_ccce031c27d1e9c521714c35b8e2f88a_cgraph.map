@@ -1,0 +1,5 @@
+<area shape="rect" href="$class_test_logger.html#fc25bd434956c32fec62189e3e542225" title="TestLogger.flush" alt="" coords="192,5,315,32">
+<area shape="rect" href="$class_test_logger.html#f620f40875c4583477d88033707e537c" title="TestLogger.log" alt="" coords="197,56,309,83">
+<area shape="rect" href="$class_test_logger.html#40cab6ca5ac2b85c51fdd24f056c25a0" title="TestLogger.sendToFile" alt="" coords="173,107,333,133">
+<area shape="rect" href="$class_test_logger.html#6ebebf8ccf0c8f414175cdfe69c34a5c" title="TestLogger.sendToMail" alt="" coords="172,157,335,184">
+<area shape="rect" href="$class_test_logger.html#b03635fe495092d72f27a159c91b43b8" title="TestLogger.addReport" alt="" coords="384,56,541,83">

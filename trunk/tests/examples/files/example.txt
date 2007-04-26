@@ -1,0 +1,1 @@
+This is the content of an example file, used to demonstrate the functionality of Hygia.
