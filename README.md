@@ -1,5 +1,7 @@
 # Hygia
 
+Hygia is a testing framework for web-applications that allows you to configure the end-points through XML configuration files and define not only the input and output parameters, but also validators and plug-ins.
+
 Hygia allows you to configure the end-points of your web application through XML configuration files and define not only the input and output parameters, but also validators and plugins. Hygia can run test unattended and automated and will create reporting files that can be reviewed at any time. It can also send email(s) in case of errors or unexpected responses.
 
 Hygia is written in PHP, but can test any application that is accessible through a network. It can test both front-end and back-end tiers of applications. Hygia basically mimics the behavior of a browser and thus acts as a client application, perfectly fit for testing server applications of any size.
