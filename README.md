@@ -17,3 +17,15 @@ The class documentation can be found in the hygia/docs/api directory. A starting
 The documentation is extracted from the source code with Doxygen.
 
 Install Hygia on a web server running a recent version of PHP and set up a virtual host with the document root pointing to hygia/www. Then you can start an example test suite by going to http://hygia/?mod=examples
+
+
+## Documentation
+
+http://webtweakers.com/projects/phpdomxml/docs/index.html
+
+
+## Examples
+
+http://webtweakers.com/projects/phpdomxml/docs/examples.php
+
+
